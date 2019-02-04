@@ -19,5 +19,8 @@
     "prompt": "^1.0.0",
     "simple-git": "^1.107.0",
     "touch": "^3.1.0"
+  },
+  "bin": {
+    "gith": "./index.js"
   }
 }

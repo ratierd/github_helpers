@@ -8,11 +8,11 @@ const github       = require('./lib/github');
 const files        = require('./lib/files');
 
 clear();
-console.log(
-  chalk.yellow(
-    figlet.textSync('Github helpers', { horizontalLayout: 'full' })
-  )
-);
+// console.log(
+//   chalk.yellow(
+//     figlet.textSync('Github helpers', { horizontalLayout: 'full' })
+//   )
+// );
 
 if (files.directoryExists('.git')) {
   const getGithubToken = async () => {

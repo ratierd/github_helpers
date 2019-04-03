@@ -1,13 +1,11 @@
 #!/usr/bin/env node
 
 const chalk       = require('chalk');
-const clear       = require('clear');
 const figlet      = require('figlet');
 
 const github       = require('./lib/github');
 const files        = require('./lib/files');
 
-clear();
 // console.log(
 //   chalk.yellow(
 //     figlet.textSync('Github helpers', { horizontalLayout: 'full' })

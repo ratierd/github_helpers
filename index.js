@@ -44,14 +44,31 @@ if (files.directoryExists('.git')) {
       const token = await getGithubToken();
       github.githubAuth(token);
       
-      // Use octokit for requests
-      github.getPullRequests({
-        owner: 'Witchbird',
-        repo: 'Negotiation-App',
-        state: 'open',
-        per_page: 100
-      });
+      let showPullRequests = process.argv.length === 0;
+      let showBranches = process.argv.length === 0;
       
+      process.argv.forEach(function (val, index, array) {
+        showPullRequests = val.includes('p');
+        showBranches = val.includes('b');
+      });
+
+      if (showPullRequests) {
+        // Use octokit for requests
+        console.log('Pull requests : ');
+        await github.getPullRequests({
+          owner: 'Witchbird',
+          repo: 'Negotiation-App',
+          state: 'open'
+        });
+      }
+
+      if (showBranches) {
+        console.log('Remote branches : ');
+        await github.getMyRemoteBranches({
+          owner: 'Witchbird',
+          repo: 'Negotiation-App'
+        });
+      }
     } catch(err) {
         if (err) {
           switch (err.code) {

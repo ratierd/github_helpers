@@ -1,16 +1,9 @@
 #!/usr/bin/env node
 
 const chalk       = require('chalk');
-const figlet      = require('figlet');
 
 const github       = require('./lib/github');
 const files        = require('./lib/files');
-
-// console.log(
-//   chalk.yellow(
-//     figlet.textSync('Github helpers', { horizontalLayout: 'full' })
-//   )
-// );
 
 if (files.directoryExists('.git')) {
   const getGithubToken = async () => {

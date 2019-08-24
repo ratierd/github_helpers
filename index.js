@@ -46,7 +46,6 @@ if (files.directoryExists('.git')) {
       });
 
       if (showPullRequests) {
-        // Use octokit for requests
         console.log('Pull requests : ');
         await github.getPullRequests({
           owner: 'Witchbird',

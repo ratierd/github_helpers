@@ -48,8 +48,8 @@ if (files.directoryExists('.git')) {
       if (showPullRequests) {
         console.log('Pull requests : ');
         await github.getPullRequests({
-          owner: 'Witchbird',
-          repo: 'Negotiation-App',
+          owner: 'concordnow',
+          repo: 'concord-app-front',
           state: 'open'
         });
       }
@@ -57,8 +57,8 @@ if (files.directoryExists('.git')) {
       if (showBranches) {
         console.log('Remote branches : ');
         await github.getMyRemoteBranches({
-          owner: 'Witchbird',
-          repo: 'Negotiation-App'
+          owner: 'concordnow',
+          repo: 'concord-app-front'
         });
       }
     } catch(err) {
